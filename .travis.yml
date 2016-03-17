@@ -7,5 +7,5 @@ before_install:
 - pip install pip --upgrade
 - pip install nose --upgrade
 - pip install six
-- pip install -r requirements.txt --user --upgrade
+- pip install -r requirements.txt --upgrade
 script: nosetests -s -v
