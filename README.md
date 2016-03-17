@@ -32,7 +32,7 @@ I could not figure out how to get the `organization` field in any consistent and
 This seems perfect, but costs $:
 http://ip-api.com/docs/api:json
 
-Likewise, Maxmind has an "IP database" [1] that claims to, "Determine the Internet Service Provider, Registering Organization, and AS Number associated with an IP address"; though again, this costs $.  Along this point, the `latitude` and `longitude` I got were attained using Maxmind's free location database offering [2], which they say is less accurate than the paid version.  I had hoped to gather the location data via some sort of api (e.g. something like google maps api), but could not get to it.
+Likewise, Maxmind has an "IP database" [1] that claims to, "Determine the Internet Service Provider, Registering Organization, and AS Number associated with an IP address"; though again, this costs $.  Along this point, the `latitude` and `longitude` I got were attained using Maxmind's free location database [2], which they say is less accurate than the paid version.  I had hoped to gather the location data via some sort of api (e.g. something like google maps api), but could not get to it.
 
 Lastly, I also wanted to refractor and implement an SQL(ite) backend, which would likely make the code scale better and be more fault tolerant, but again, those time constraints.
 
