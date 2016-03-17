@@ -27,14 +27,14 @@ nosetests -s -v
 ```
 
 
-I could not figure out how to get the `organization` field in any consistent and usable way, so put the isp as the organization (which is commonly the case I noticed).  Regarding this, I made several attempts at scraping whois data per each ip address to get this field, which was promising, albeit a bit too unstructured to be readily usable; also, doing so took way too long to be usable at any reasonable scale.  I did find numerous companies offering the "organization" data, but under the time constraints I couldn't implement a free solution.  As for two great paid options:
+I could not figure out how to get the `organization` field in any consistent and usable way, so put the isp as the organization (which is commonly the case I noticed).  Regarding this, I made several attempts at scraping whois data per each ip address to get this field, which was promising, albeit a bit too unstructured to be reliable; also, doing so took way too long to be usable at any reasonable scale.  I did find numerous companies offering the "organization" data, but under the time constraints I couldn't implement a free solution.  As for two great paid options:
 
 This seems perfect, but costs $:
 http://ip-api.com/docs/api:json
 
-Likewise, Maxmind has an "IP database" [1] that claims to, "Determine the Internet Service Provider, Registering Organization, and AS Number associated with an IP address"; though again, this costs $.  Along this point, the `latitude` and `longitude` I got were attained using Maxmind's free location database offering [2], which they say is less accurate than the paid version.  I had planned on trying to gather the location data via some sort of api (e.g. something like google maps api), though ran into time constraints.
+Likewise, Maxmind has an "IP database" [1] that claims to, "Determine the Internet Service Provider, Registering Organization, and AS Number associated with an IP address"; though again, this costs $.  Along this point, the `latitude` and `longitude` I got were attained using Maxmind's free location database offering [2], which they say is less accurate than the paid version.  I had hoped to gather the location data via some sort of api (e.g. something like google maps api), but could not get to it.
 
-Lastly, I had wanted to refractor and implement an SQL(ite) backend, which would likely make the code scale better and be more fault tolerant, but again, those time constraints.
+Lastly, I also wanted to refractor and implement an SQL(ite) backend, which would likely make the code scale better and be more fault tolerant, but again, those time constraints.
 
 [1] https://www.maxmind.com/en/geoip2-isp-database
 
