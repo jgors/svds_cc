@@ -35,6 +35,6 @@ Likewise, Maxmind has an "IP database" [1] that claims to, "Determine the Intern
 
 Lastly, I had wanted to refractor and implement an SQL(ite) backend, which would likely make the code scale better and be more fault tolerant, but again, those time constraints.
 
-[1] https://www.maxmind.com/en/geoip2-databases &
-    https://www.maxmind.com/en/geoip2-isp-database
+[1] https://www.maxmind.com/en/geoip2-isp-database
+
 [2] https://www.maxmind.com/en/open-source-data-and-api-for-ip-geolocation
