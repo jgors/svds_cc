@@ -1,0 +1,48 @@
+
+Schema:
+-------
+They use nginx (from checking the server in the headers of a request)
+(like the "Combined Log Format" -- http://httpd.apache.org/docs/trunk/logs.html#accesslog)
+
+198.0.200.105 - - [14/Jan/2014:09:36:50 -0800] "GET /svds.com HTTP/1.1" 301 241 "http://www.svds.com/rockandroll/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"
+
+1. Remote host (ie the client IP):                                     198.0.200.105
+2. Identity of the user determined by identd:                          -       (the 1st hyphen is the clientid)
+    (not usually used since not reliable)
+3. User name determined by HTTP authentication:                        -       (the 2nd hyphen is the userid)
+4. Time the server finished processing the request:                    [14/Jan/2014:09:36:50 -0800]     (? docs say, "The time that the request was received." not "finished processing")
+5. Request line from the client. ("GET / HTTP/1.0"):                   "GET /svds.com HTTP/1.1"
+6. Status code sent from the server to the client (200, 404 etc.):     301
+7. Size of the response to the client (in bytes):                      241
+8. Referer is the page that linked to this URL:                        "http://www.svds.com/rockandroll/"
+9. User-agent is the browser identification string:                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"
+
+
+
+Write out to access_log.out the following:
+-----------------------------------------------
+date & time request was processed by the web server as epoch (from the file)
+uri user click on (from the file)
+referer (from the file)
+ip address (from the file)
+organization (from the ip address)
+latitude (from the ip address)
+longitude (from the ip address)
+isp name (from the ip address)
+
+###########################
+So for their Schema example:
+198.0.200.105 - - [14/Jan/2014:09:36:50 -0800] "GET /svds.com HTTP/1.1" 301 241 "http://www.svds.com/rockandroll/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"
+
+(From the file)
+date & time request was processed by the web server as epoch:   [14/Jan/2014:09:36:50 -0800]
+uri user clicked on:    /svds.com
+referer:    http://www.svds.com/rockandroll/
+ip address:     198.0.200.105
+
+(From the ip address)
+organization:
+latitude:
+longitude:
+isp name:
+###########################
